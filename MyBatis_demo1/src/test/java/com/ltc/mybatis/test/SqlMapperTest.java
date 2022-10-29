@@ -36,5 +36,6 @@ public class SqlMapperTest {
         mapper.inserUser(user);
         System.out.println(user);
         System.out.println(user);
+        System.out.println(user);
     }
 }
