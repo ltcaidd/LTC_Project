@@ -35,5 +35,6 @@ public class SqlMapperTest {
         User user=new User(null,"张三","147956",29,"男","159@qq.com");
         mapper.inserUser(user);
         System.out.println(user);
+        System.out.println(user);
     }
 }
