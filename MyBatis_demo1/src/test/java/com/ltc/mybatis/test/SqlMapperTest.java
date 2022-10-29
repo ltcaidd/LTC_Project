@@ -37,5 +37,6 @@ public class SqlMapperTest {
         System.out.println(user);
         System.out.println(user);
         System.out.println(user);
+        System.out.println("hello git4");
     }
 }
