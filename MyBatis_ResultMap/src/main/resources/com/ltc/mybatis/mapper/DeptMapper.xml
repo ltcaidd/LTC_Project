@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace要和接口类名一致-->
+<mapper namespace="com.ltc.mybatis.mapper.DeptMapper">
+    <!--sql语句中的id要和接口的方法名一致-->
+<!--    Dept getEmpAndDeptSteptwo(@Param("deptid") Integer deptid);-->
+    <select id="getEmpAndDeptSteptwo" resultType="Dept">
+        select * from t_dept where dept_id=#{deptid}
+    </select>
+
+</mapper>
