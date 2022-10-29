@@ -40,5 +40,6 @@ public class SqlMapperTest {
         System.out.println("hello.txt");
         System.out.println("master txt");
         System.out.println("push test!");
+        System.out.println("pull test!");
     }
 }
