@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace要和接口类名一致-->
+<mapper namespace="com.ltc.mybatis.mapper.SelectMapper">
+    <!--sql语句中的id要和接口的方法名一致-->
+<!--User getUserById(Integer id);-->
+    <select id="getUserById" resultType="User">
+        select * from t_user where id=#{id}
+    </select>
+<!--List<User> getUserAll();-->
+    <select id="getUserAll" resultType="User">
+        select * from t_user
+    </select>
+<!--Integer getCount();-->
+    <select id="getCount" resultType="int">
+        select count(*) from t_user
+    </select>
+<!--Map<String,Object> getUserByIdToMap(int id);-->
+    <select id="getUserByIdToMap" resultType="map">
+        select * from t_user where id=#{id}
+    </select>
+<!--List<Map<String,Object>> getUserAllToMap();-->
+    <select id="getUserAllToMap" resultType="map">
+        select * from t_user
+    </select>
+
+</mapper>

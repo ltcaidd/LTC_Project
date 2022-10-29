@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace要和接口类名一致-->
+<mapper namespace="com.ltc.mybatis.mapper.SqlMapper">
+    <!--sql语句中的id要和接口的方法名一致-->
+<!--List<User> getUserByLike(@Param("username") String username);-->
+    <select id="getUserByLike" resultType="user">
+<!--方法一：select * from t_user where username like '%${username}%'-->
+<!--方法二：select * from t_user where username like concat('%',#{username},'%')-->
+<!--方法三：-->
+        select * from t_user where username like "%"#{username}"%"
+    </select>
+<!--Integer getDeleteMove(String ids);-->
+    <delete id="getDeleteMove">
+        delete from t_user where id in (${ids})
+    </delete>
+<!--List<User> getUserTableName(@Param("tablename") String tablename);-->
+    <select id="getUserTableName" resultType="User">
+        select * from ${tablename}
+    </select>
+<!-- int inserUser(User user); -->
+    <!--
+    useGeneratedKeys:设置当前标签中的sql使用了自增的主键
+    keyProperty：将自增的主键的值赋值给传输到映射文件中的某个属性
+    -->
+    <insert id="inserUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values(null,#{username},#{password},#{age},#{sex},#{email})
+    </insert>
+</mapper>
