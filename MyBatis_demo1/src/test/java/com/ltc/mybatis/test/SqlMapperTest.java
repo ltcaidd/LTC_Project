@@ -37,6 +37,7 @@ public class SqlMapperTest {
         System.out.println(user);
         System.out.println(user);
         System.out.println(user);
+        System.out.println("hello.txt");
         System.out.println("master txt");
     }
 }
